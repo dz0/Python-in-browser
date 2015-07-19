@@ -10,7 +10,13 @@
 <link rel="icon" href="src/images/favicon.ico" type="image/icon">
 <link href="src/css/jquery-ui.custom.min.css" rel="stylesheet" >
  <link rel="stylesheet" href="offline/codemirror-3.0/lib/codemirror.css"> 
-<link rel="stylesheet" href="src/css/reeborg_dev.css"> <!-- load after codemirror.css -->
+ 
+<!-- load after codemirror.css -->
+<!--
+<link rel="stylesheet" href="src/css/reeborg_dev.css"> 
+-->
+<link rel="stylesheet" href="src/css/reeborg_world.css">
+
 <title>Reeborg's world</title>
     <script src="src/libraries/brython_old/brython.js"></script>
 </head>
@@ -32,11 +38,13 @@
     <button id="permalink" class="blue-gradient" label="url-form" title="Create a permalink" onclick="RUR.create_permalink();">
       Permalink
     </button>
+<!--
     <form>
         <input type="radio" name="programming_language" value="python-en" checked> Python
         <input type="radio" name="programming_language" value="javascript-en" > Javascript
         <input type="radio" name="programming_language" value="coffeescript-en" > CoffeeScript
     </form>
+-->
     <button id="more-menus-button" class="blue-gradient" label="url-form" title="Menu additionnel">
       Additional menu
     </button>
@@ -84,7 +92,7 @@
     <div id="Reeborg-shouts" title="Reeborg shouts: Something is wrong!" style="display:none"></div>
   </div>
 
-    <div id="world-edit-buttons">
+    <div id="world-edit-buttons" style="display:none">
   <fieldset id="world-fieldset"><legend>World</legend>
     <select id="select_world" title="Select world">
       <option value="src/json/alone.json" selected>Alone</option>
@@ -146,6 +154,8 @@
       </fieldset>
   </fieldset>
     </div>
+      
+      
       <div id="image-choice-buttons">
       <button id="classic-image" title="Classic image"><img src="src/images/robot_e.png" alt="robot east"></button>
       <button id="rover-type" title="Rover type"><img src="src/images/rover_e.png" alt="robot east"></button>
