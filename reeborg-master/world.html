@@ -9,7 +9,10 @@
 <link rel="shortcut icon" href="src/images/favicon.ico" type="image/icon">
 <link rel="icon" href="src/images/favicon.ico" type="image/icon">
 <link href="src/css/jquery-ui.custom.min.css" rel="stylesheet" >
+<!--
  <link rel="stylesheet" href="offline/codemirror-3.0/lib/codemirror.css"> 
+-->
+ <link rel="stylesheet" href="offline/codemirror-3.0/lib/codemirror.5.css"> 
  
 <!-- load after codemirror.css -->
 <!--
@@ -281,7 +284,10 @@
 
  <script src="offline/jquery-2.1.0/jquery.min.js"></script> 
  <script src="offline/jqueryui-1.10.4/jquery-ui.min.js"></script> 
+<!--
 <script src="offline/codemirror-3.0/lib/codemirror.js"></script> 
+-->
+<script src="offline/codemirror-3.0/lib/codemirror.5.js"></script> 
  <script src="offline/codemirror-3.0/mode/javascript/javascript.js"></script> 
  
  <script src="offline/codemirror-3.0/mode/python/python.js"></script> 
@@ -404,6 +410,7 @@ function insertText(txt){
           </ul>
           <ul class="buttons">
              <li class="separator" onclick='insertText(":");'>&nbsp;&nbsp;:&nbsp;&nbsp;</li> 
+             <li class="separator" onclick='insertText(";");'>&nbsp;&nbsp;;&nbsp;&nbsp;</li> 
              <li class="separator" onclick='insertText("=");'>&nbsp;&nbsp;=&nbsp;&nbsp;</li> 
              <li class="separator" onclick='insertText("\"");'>&nbsp;&nbsp;"&nbsp;&nbsp;</li> 
              <li class="separator" onclick='insertText("(");'>&nbsp;&nbsp;(&nbsp;&nbsp;</li> 
