@@ -64,7 +64,7 @@
   </p>
   </div>
 
-<div id="world-panel" class="active" >
+<div id="world-panel" style="widht:550px" class="active" >
 
   <div id="world-controls">
     <button class="blue-gradient" id="run" title="run" onclick="RUR.ui.run();">
@@ -85,11 +85,11 @@
     
 
   </div>
-  <div id="canvas-wrapper">
-    <canvas id="background_canvas" width="620" height="550"></canvas>
-    <canvas id="wall_canvas" width="620" height="550"></canvas>
-    <canvas id="trace_canvas" width="620" height="550"></canvas>
-    <canvas id="robot_canvas" width="620" height="550"></canvas>
+  <div id="canvas-wrapper" width="550" style="widht:550px">
+    <canvas id="background_canvas" width="550" height="550"></canvas>
+    <canvas id="wall_canvas" width="550" height="550"></canvas>
+    <canvas id="trace_canvas" width="550" height="550"></canvas>
+    <canvas id="robot_canvas" width="550" height="550"></canvas>
     <div id="Reeborg-concludes" title="Reeborg says: I'm done!" style="display:none"></div>
     <div id="Reeborg-says" title="Reeborg says:" style="display:none"></div>
     <div id="Reeborg-shouts" title="Reeborg shouts: Something is wrong!" style="display:none"></div>
@@ -144,7 +144,7 @@
       <option value="src/json/program_your_parents.json">Program Your Parents</option>
     </select>
 
-      <button class="blue-gradient" id="edit-world" title="Edit world">Edit</button>
+      <button class="blue-gradient" id="edit-world"  title="Edit world">Edit</button>
       <fieldset id="file-fieldset"><legend>File</legend>
       <button class="blue-gradient" id="save-world" title="Save world to file">Save</button>
       <button class="blue-gradient" id="load-world" title="Load world from file">Open</button>
@@ -159,14 +159,14 @@
     </div>
       
       
-      <div id="image-choice-buttons">
+      <div id="image-choice-buttons" style="display:none">
       <button id="classic-image" title="Classic image"><img src="src/images/robot_e.png" alt="robot east"></button>
       <button id="rover-type" title="Rover type"><img src="src/images/rover_e.png" alt="robot east"></button>
     </div>
 </div>
 
 
-<div id="output-panel">
+<div id="output-panel" style="display:none">
     <div id="diary-controls">
     <button class="blue-gradient" id="run2" title="run" onclick="RUR.ui.run();">
       <img src="src/images/play.png" alt="play">
@@ -183,7 +183,7 @@
   </div>
 </div>
 
-<div id="editor-panel" class="active" >
+<div id="editor-panel" class="active" style="left:550px; toop: 100px; height: 550px; width:500px; ">
   <input type="file" id="fileInput" style="display:none;">
   <div id="tabs">
     <ul>
@@ -195,6 +195,8 @@
       </button>
       <li><a id="library-link" href="#library">Library</a></li>
     </ul>
+    
+    
     <div id="editor">
       
       <textarea id="code" name="code">move()</textarea>
@@ -220,7 +222,7 @@
   </div>
 </div>
 
-<div id="edit-world-panel">
+<div id="edit-world-panel" style="display:none;">
     <h1>Create your own worlds!</h1>
     <p>If you want to share your world (and corresponding challenges) with others,
         save it to a file, or better yet, save everything using a permalink
@@ -391,8 +393,8 @@ function insertText(txt){
              <li class="command" onclick='insertText(this.innerHTML+"()");'>take</li> 
              <li class="command" onclick='insertText(this.innerHTML+"()");'>put</li> 
           </ul>
-          <ul class="buttons">  
-             <span>Patikrinimai: </span>
+          <ul class="buttons" >  
+             <span>Tikrinimas: </span>
              <li class="command" onclick='insertText(this.innerHTML+"()");'>front_is_clear</li> 
              <li class="command" onclick='insertText(this.innerHTML+"()");'>at_goal</li> 
              <li class="command" onclick='insertText(this.innerHTML+"()");'>token_here</li> 
@@ -418,18 +420,20 @@ function insertText(txt){
              <li class="separator" onclick='insertText(")");'>&nbsp;&nbsp;)&nbsp;&nbsp;</li> 
              <li class="separator" onclick='insertText("[]");'>&nbsp;[ ]&nbsp;</li> 
              
-             <li class="separator" onclick='insertText("    ");'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li> 
+             <li class="separator" onclick='insertText("    ");'>TAB</li> 
              <li class="separator" onclick='insertText("\n");'>Enter</li> 
+             
           </ul>
           <style>
              ul.buttons > li { display: inline; border: 1px solid silver; cursor: pointer; height: 20px; margn: 10px; padding: 10px; line-height:40px; }
              div#touch-buttons { background: white; z-index:10000 ; }
+             ul.buttons {padding-left:0; margin-left:0; padding-top:0; margin-top:0}
           </style>
     </div>
 </div>
 
 <script>
-    $("#touch-commands").dialog({autoOpen:false, width:600,  height:300, maximize: false, position:"top-left",
+    $("#touch-commands").dialog({autoOpen:false, width:550,  height:300, maximize: false, position:"left",
         beforeClose: function( event, ui ) {$("#touch-commands-button").addClass("blue-gradient").removeClass("reverse-blue-gradient");}});
 
     $("#touch-commands-button").on("click", function() {
