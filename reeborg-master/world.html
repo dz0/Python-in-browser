@@ -356,7 +356,9 @@ function insertText(txt){
        ch: cursor.ch // set the character position to the end of the line
    }
    doc.replaceRange(txt, pos); // adds a new line
-   editor.focus();
+   doc.focus();
+   doc.setCursor( {line:pos.line, ch:pos.ch+txt.length} );
+   
 }
 
 </script>
@@ -406,9 +408,13 @@ function insertText(txt){
              <li class="baseword" onclick='insertText(this.innerHTML+"\n    ");'>else:</li> 
              <li class="baseword" onclick='insertText(this.innerHTML+"\n    ");'>while :</li> 
              
-             <li class="baseword" onclick='insertText(this.innerHTML+"\n    "););'>for  in  :</li> 
+             <li class="baseword" onclick='insertText(this.innerHTML+"\n    ");'>for ? in  range( ? ):</li> 
+             <li class="baseword" onclick='insertText(this.innerHTML+"\n    ");'>def  ?( ):</li> 
+<!--
+             <li class="baseword" onclick='insertText(this.innerHTML+"\n    ");'>for  in  :</li> 
              <li class="command" onclick='insertText(this.innerHTML);'>range( )</li> 
-             <li class="baseword" onclick='insertText(this.innerHTML+"\n    "););'>def  ( ):</li> 
+             <li class="baseword" onclick='insertText(this.innerHTML+"\n    ");'>def  ( ):</li> 
+-->
           </ul>
           <ul class="buttons">
              <li class="separator" onclick='insertText(":");'>&nbsp;&nbsp;:&nbsp;&nbsp;</li> 
