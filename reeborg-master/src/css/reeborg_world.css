@@ -31,7 +31,7 @@ canvas {
 
 /* layering */
 #background_canvas {z-index: 1}
-#second_layer_canvas {z-index: 2}
+#second_layer_canvas, #wall_canvas {z-index: 2}
 #goal_canvas {z-index: 3}
 #objects_canvas {z-index: 4}
 #trace_canvas {z-index: 5}
